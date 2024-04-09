@@ -1,26 +1,23 @@
 module.exports = {
   servers: {
     one: {
-      host: '111.222.333.444',
+      host: 'your_droplet_ipv4_address',
       username: 'root',
-      password: 'changeme'
+      password: 'your_root_password'
     }
   },
   app: {
-    // if you edit the app 'name' field, be sure to run 'mup stop' if the app is already running.
-    // otherwise you will have two apps deployed at once, with unpredictable results.
     name: 'meteor-react-bootstrap-template',
     path: '../',
     servers: { one: {}, },
     buildOptions: { serverOnly: true },
     env: {
-      ROOT_URL: 'http://111.222.333.444',
+      ROOT_URL: 'https://your_droplet_ipv4_address',
       MONGO_URL: 'mongodb://mongodb/meteor',
       MONGO_OPLOG_URL: 'mongodb://mongodb/local',
     },
     docker: { image: 'zodern/meteor:latest' },
     enableUploadProgressBar: true
   },
-  mongo: { version: '5.0', servers: { one: {} }
-  },
+  mongo: { version: '5.0', servers: { one: {} } }
 };
